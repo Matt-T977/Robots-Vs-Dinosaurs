@@ -28,7 +28,8 @@ class Battlefield:
             return False
 
     def battle(self):
-        pass
+        self.dino_turn(self.show_dino_opponent_options())
+        self.robo_turn(self.show_robo_opponent_options())
 
     def dino_turn(self, dinosaur):
         pass

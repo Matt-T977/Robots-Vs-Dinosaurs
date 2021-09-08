@@ -10,4 +10,4 @@ class Robot:
 
 
     def attack(self, dinosaur):
-        pass    
+        dinosaur = dinosaur - self.weapon.attack_power

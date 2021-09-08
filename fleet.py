@@ -10,10 +10,8 @@ class Fleet:
         robot_one = Robot()
         robot_two = Robot()
         robot_three = Robot()
-        self.robots = [robot_one, robot_two, robot_three]  
-        # self.robots.append(robot_one = Robot())
-        # self.robots.append(robot_two = Robot())
-        # self.robots.append(robot_three = Robot())  
+        self.robots = [robot_one, robot_two, robot_three]
+        self.fleet_setup()  
 
     def fleet_setup(self):
         self.robots[0].weapon_profile = "Photon Cannon"
