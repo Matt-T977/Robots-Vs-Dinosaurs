@@ -11,9 +11,7 @@ class Herd:
         dinosaur_two = Dinosaur()
         dinosaur_three = Dinosaur()
         self.dinosaurs = [dinosaur_one, dinosaur_two, dinosaur_three]
-        # self.dinosaurs.append(dinosaur_one = Dinosaur())
-        # self.dinosaurs.append(dinosaur_two = Dinosaur())
-        # self.dinosaurs.append(dinosaur_three = Dinosaur())
+        self.herd_setup()
 
     def herd_setup(self):
         self.dinosaurs[0].dinosaur_setup(0)

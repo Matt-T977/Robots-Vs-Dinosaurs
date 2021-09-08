@@ -12,16 +12,20 @@ class Battlefield:
 
 
     def run_game(self):
-        self.display_welcome(self)
-        self.herd.create_herd()
-        self.herd.herd_setup()
-        self.fleet.create_fleet()
-        self.fleet.fleet_setup()
+        game_start = self.display_welcome()
+        if game_start:
+            self.herd.create_herd()
+            self.fleet.create_fleet()
+            self.fleet.fleet_setup()
         
     def display_welcome(self):
         game_start = input('''ROBOTS VS DINOSAURS\n
         Type Start to begin!\n 
-        ''')
+        ''').lower()
+        if game_start == "start":
+            return True  
+        else:
+            return False
 
     def battle(self):
         pass
