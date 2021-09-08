@@ -14,9 +14,12 @@ class Fleet:
         self.fleet_setup()  
 
     def fleet_setup(self):
+        self.robots[0].name = "DSU-975-PC"
         self.robots[0].weapon_profile = "Photon Cannon"
         self.robots[0].weapon.weapon_profile(self.robots[0].weapon_profile)
+        self.robots[1].name = "DSU-976-BR"
         self.robots[1].weapon_profile = "Beam Rifle"
         self.robots[1].weapon.weapon_profile(self.robots[1].weapon_profile)
+        self.robots[2].name = "DSU-977-IL"
         self.robots[2].weapon_profile = "Ion Lance"
         self.robots[2].weapon.weapon_profile(self.robots[2].weapon_profile)
