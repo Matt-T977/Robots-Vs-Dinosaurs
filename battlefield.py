@@ -62,13 +62,12 @@ class Battlefield:
             \n2: {self.fleet.robots[1].name} HP: {self.fleet.robots[1].health}
             \n3: {self.fleet.robots[2].name} HP: {self.fleet.robots[2].health}
             \nPlayer: ''')) - 1 
-            if self.fleet.robots[player_choice].health <= 0:
-                print(f"{self.fleet.robots[player_choice].name} is already destroyed! Pick another Soldier Commander!")
-            elif self.fleet.robots[player_choice].health > 0:
+            if self.fleet.robots[player_choice].alive:
                 return player_choice
+            elif self.fleet.robots[player_choice].alive == False:
+                print(f"{self.fleet.robots[player_choice].name} is already destroyed! Pick another Soldier Commander!")
             else:
                 print("Invalid input try again.")
-            return player_choice
 
     def show_dino_options(self):
         invalid_choice = True
@@ -79,10 +78,10 @@ class Battlefield:
             \n2: {self.herd.dinosaurs[1].name} HP: {self.herd.dinosaurs[1].health}
             \n3: {self.herd.dinosaurs[2].name} HP: {self.herd.dinosaurs[2].health}
             \nPlayer: ''')) - 1
-            if self.herd.dinosaurs[player_choice].health <= 0:
-                print(f"{self.herd.dinosaurs[player_choice].name} is already dead! Pick another Dinosaur Alpha!")
-            elif self.herd.dinosaurs[player_choice].health > 0:
+            if self.herd.dinosaurs[player_choice].alive:
                 return player_choice
+            elif self.herd.dinosaurs[player_choice].alive == False:
+                print(f"{self.herd.dinosaurs[player_choice].name} is already dead! Pick another Dinosaur Alpha!")
             else:
                 print("Invalid input try again.")
 
@@ -95,10 +94,10 @@ class Battlefield:
             \n2: {self.fleet.robots[1].name} HP: {self.fleet.robots[1].health}
             \n3: {self.fleet.robots[2].name} HP: {self.fleet.robots[2].health}
             \nPlayer: ''')) - 1
-            if self.fleet.robots[player_target].health <= 0:
-                print(f"{self.fleet.robots[player_target].name} is already destroyed! Pick another target Alpha!")
-            elif self.fleet.robots[player_target].health > 0:
+            if self.fleet.robots[player_target].alive:
                 return player_target
+            elif self.fleet.robots[player_target].alive == False:
+                print(f"{self.fleet.robots[player_target].name} is already destroyed! Pick another target Alpha!")
             else:
                 print("Invalid input try again.")       
 
@@ -111,10 +110,10 @@ class Battlefield:
             \n2: {self.herd.dinosaurs[1].name} HP: {self.herd.dinosaurs[1].health}
             \n3: {self.herd.dinosaurs[2].name} HP: {self.herd.dinosaurs[2].health}
             \nPlayer: ''')) - 1
-            if self.herd.dinosaurs[player_target].health <= 0:
-                print(f"{self.herd.dinosaurs[player_target].name} is already dead! Pick another target Commander!")
-            elif self.herd.dinosaurs[player_target].health > 0:
+            if self.herd.dinosaurs[player_target].alive:
                 return player_target
+            elif self.herd.dinosaurs[player_target].alive == False:
+                print(f"{self.herd.dinosaurs[player_target].name} is already dead! Pick another target Commander!")
             else:
                 print("Invalid input try again.")    
 
@@ -122,4 +121,4 @@ class Battlefield:
         if winners == "Dinosaurs":
             print("\nDinosaurs have trampled and dismantled the robot invasion. Skynet does not go online.")
         elif winners == "Robots":
-            print("\nSkynet Online. Robots have managed to vaporize the dinosaurs making them extinct... Again.")    
+            print("\nSkynet Online. Robots have managed to vaporize the dinosaurs making them extinct Commander... Again.")    

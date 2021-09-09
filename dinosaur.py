@@ -10,7 +10,7 @@ class Dinosaur:
     def dinosaur_setup(self, dinosaur_number):
         dinosaur_names = ["Raptor", "Trike", "Rex"]
         dinosaur_health = [50, 125, 100]
-        dinosaur_attack = [10, 25, 75]
+        dinosaur_attack = [15, 25, 75]
         self.name = dinosaur_names[dinosaur_number]
         self.health = dinosaur_health[dinosaur_number]
         self.attack_power = dinosaur_attack[dinosaur_number]
@@ -28,6 +28,6 @@ class Dinosaur:
     def attack(self, robot):
         self.attack_selection(robot)
         robot.health -= self.attack_power
-        print(f"\n{robot.name} has {robot.health} remaining!")
+        print(f"\n{robot.name} has {robot.health} HP remaining!")
         if robot.health <= 0:
             robot.alive = False

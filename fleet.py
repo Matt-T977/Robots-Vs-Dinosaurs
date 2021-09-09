@@ -14,6 +14,9 @@ class Fleet:
         self.fleet_setup()  
 
     def fleet_setup(self):
+        print('''
+        \nThe fleet has arrived Commander! 
+        \nPlease select our squad's armament Commander!''')
         self.robots[0].name = "DSU-975-PC"
         self.robots[0].weapon_selection()
         self.robots[1].name = "DSU-976-BR"

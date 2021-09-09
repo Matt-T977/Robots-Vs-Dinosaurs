@@ -20,6 +20,6 @@ class Robot:
     def attack(self, dinosaur):
         print(f"\n{self.name} blasts the {dinosaur.name} with their {self.weapon.name}!")
         dinosaur.health -= self.weapon.attack_power
-        print(f"\n{dinosaur.name} has {dinosaur.health} remaining!")
+        print(f"\n{dinosaur.name} has {dinosaur.health} HP remaining!")
         if dinosaur.health <= 0:
             dinosaur.alive = False
