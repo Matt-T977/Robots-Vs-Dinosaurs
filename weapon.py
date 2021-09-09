@@ -5,12 +5,12 @@ class Weapon:
         
 
     def weapon_profile(self, profile):
-        if profile == "Photon Cannon":
+        if profile == "1":
            self.name = "Photon Cannon"
            self.attack_power = 50
-        elif profile == "Beam Rifle":
+        elif profile == "2":
             self.name = "Beam Rifle"
             self.attack_power = 10
-        elif profile == "Ion Lance":
+        elif profile == "3":
             self.name = "Ion Lance"
             self.attack_power = 25       

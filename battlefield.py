@@ -20,8 +20,9 @@ class Battlefield:
                 play_again = input("Do you wish to play again? Yes or No")
         
     def display_welcome(self):
-        game_start = input('''ROBOTS VS DINOSAURS\n
-        Type Start to begin!\n 
+        game_start = input('''
+        \nROBOTS VS DINOSAURS
+        \nType Start to begin!\n 
         ''').lower()
         if game_start == "start":
             return True  
@@ -55,23 +56,35 @@ class Battlefield:
         return False
 
     def show_robo_options(self):
-        print(f'1:{self.fleet.robots[0].name}\n2:{self.fleet.robots[1].name}\n3:{self.fleet.robots[2].name}')
-        player_choice = int(input("Pick your robot!")) - 1
+        print(f'''
+        \n1: {self.fleet.robots[0].name}
+        \n2: {self.fleet.robots[1].name}
+        \n3: {self.fleet.robots[2].name}\n''')
+        player_choice = int(input("Pick your robot! ")) - 1
         return player_choice
 
     def show_dino_options(self):
-        print(f'1:{self.herd.dinosaurs[0].name}\n2:{self.herd.dinosaurs[1].name}\n3:{self.herd.dinosaurs[2].name}')
-        player_target = int(input("Pick your dinosaur!")) - 1
+        print(f'''
+        \n1: {self.herd.dinosaurs[0].name}
+        \n2: {self.herd.dinosaurs[1].name}
+        \n3: {self.herd.dinosaurs[2].name}\n''')
+        player_target = int(input("Pick your dinosaur! ")) - 1
         return player_target
 
     def show_dino_opponent_options(self):
-        print(f'1:{self.fleet.robots[0].name}\n2:{self.fleet.robots[1].name}\n3:{self.fleet.robots[2].name}')
-        player_target = int(input("Pick your dinosaur's attack target!")) - 1
+        print(f'''
+        \n1: {self.fleet.robots[0].name}
+        \n2: {self.fleet.robots[1].name}
+        \n3: {self.fleet.robots[2].name}\n''')
+        player_target = int(input("Pick your dinosaur's attack target! ")) - 1
         return player_target
 
     def show_robo_opponent_options(self):
-        print(f'1:{self.herd.dinosaurs[0].name}\n2:{self.herd.dinosaurs[1].name}\n3:{self.herd.dinosaurs[2].name}')
-        player_target = int(input("Pick your robot's attack target!")) - 1
+        print(f'''
+        \n1: {self.herd.dinosaurs[0].name}
+        \n2: {self.herd.dinosaurs[1].name}
+        \n3: {self.herd.dinosaurs[2].name}\n''')
+        player_target = int(input("Pick your robot's attack target! ")) - 1
         return player_target
 
     def display_winners(self, winners):
