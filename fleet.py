@@ -3,7 +3,7 @@ from robot import Robot
 
 class Fleet:
     def __init__(self):
-        self.robots = list
+        self.robots = []
 
 
     def create_fleet(self):

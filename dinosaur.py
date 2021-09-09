@@ -6,6 +6,7 @@ class Dinosaur:
         self.name = ""
         self.attack_power = 0
         self.health = 0
+        self.alive = True
 
 
     def dinosaur_setup(self, dinosaur_number):
@@ -17,4 +18,6 @@ class Dinosaur:
         self.attack_power = dinosaur_attack[dinosaur_number]
 
     def attack(self, robot):
-        robot = robot - self.attack_power
+        robot.health -= self.attack_power
+        if robot.health <= 0:
+            robot.alive = False

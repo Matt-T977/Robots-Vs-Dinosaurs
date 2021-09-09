@@ -2,6 +2,7 @@ class Weapon:
     def __init__(self):
         self.name = ""
         self.attack_power = 0
+        
 
     def weapon_profile(self, profile):
         if profile == "Photon Cannon":
