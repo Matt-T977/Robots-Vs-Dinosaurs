@@ -3,7 +3,7 @@ class Weapon:
         self.name = ""
         self.attack_power = 0
         
-
+# Takes load out selection and loads it into the weapon profile
     def weapon_profile(self, profile):
         if profile == "1":
            self.name = "Photon Cannon"

@@ -8,6 +8,7 @@ class Robot:
         self.health = 75
         self.alive = True
 
+# Load out selection function for each robot
     def weapon_selection(self):
         weapon_profile = input(f"""
         \nWhich weapon would you like to equip for {self.name}? 
@@ -17,6 +18,7 @@ class Robot:
         \nPlayer: """)
         self.weapon.weapon_profile(weapon_profile)
 
+# Handles Damage Calculation and HP Display
     def attack(self, dinosaur):
         print(f"\n{self.name} blasts the {dinosaur.name} with their {self.weapon.name}!")
         dinosaur.health -= self.weapon.attack_power

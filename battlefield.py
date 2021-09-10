@@ -9,6 +9,7 @@ class Battlefield:
         self.herd = Herd()
 
 
+# Begins the game set up and starts it. Built in replayability
     def run_game(self):
         game_start = self.display_welcome()
         if game_start:
@@ -18,7 +19,8 @@ class Battlefield:
                 self.fleet.create_fleet()
                 self.display_winners(self.battle())
                 play_again = input("\nDo you wish to play again? 1: Yes 2: No \nPlayer: ")
-        
+
+ # Start Menu for Players       
     def display_welcome(self):
         game_start = input('''
         \nROBOTS VS DINOSAURS
@@ -29,6 +31,7 @@ class Battlefield:
         else:
             return False
 
+# Controls the battle sequence for players and ends it upon victory condition met.
     def battle(self):
         game_continue = True
         while game_continue:
@@ -39,6 +42,7 @@ class Battlefield:
             if game_continue == False:
                 return "Robots"
 
+# Dinosaurs turn and victory condition check
     def dino_turn(self, dinosaur, robot):
         self.herd.dinosaurs[dinosaur].attack(self.fleet.robots[robot])
         for robo in self.fleet.robots:
@@ -46,6 +50,7 @@ class Battlefield:
                 return True
         return False            
 
+# Robots turn and victory condition check
     def robo_turn(self, robot, dinosaur):
         self.fleet.robots[robot].attack(self.herd.dinosaurs[dinosaur])
         for dino in self.herd.dinosaurs:
@@ -53,6 +58,8 @@ class Battlefield:
                 return True
         return False
 
+##############Refactor Needed Below########################
+# Robot character selection, also prevents players from picking a destroyed robot
     def show_robo_options(self):
         invalid_choice = True
         while invalid_choice:
@@ -69,6 +76,7 @@ class Battlefield:
             else:
                 print("Invalid input try again.")
 
+# Dino character selection, also prevents players from picking a dead dino
     def show_dino_options(self):
         invalid_choice = True
         while invalid_choice:
@@ -85,6 +93,7 @@ class Battlefield:
             else:
                 print("Invalid input try again.")
 
+# Dino Target selection, also prevents players from picking a destroyed target
     def show_dino_opponent_options(self):
         invalid_target = True
         while invalid_target:
@@ -101,6 +110,7 @@ class Battlefield:
             else:
                 print("Invalid input try again.")       
 
+# Robo Target selection, also prevents players from picking a dead target
     def show_robo_opponent_options(self):
         invalid_target = True
         while invalid_target:
@@ -116,7 +126,9 @@ class Battlefield:
                 print(f"{self.herd.dinosaurs[player_target].name} is already dead! Pick another target Commander!")
             else:
                 print("Invalid input try again.")    
+###############Refactor Needed Above#################################
 
+# When victory conditions are met, will display the winner for the player.
     def display_winners(self, winners):
         if winners == "Dinosaurs":
             print("\nDinosaurs have trampled and dismantled the robot invasion. Skynet does not go online.")

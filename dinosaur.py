@@ -6,7 +6,7 @@ class Dinosaur:
         self.health = 0
         self.alive = True
 
-
+# Picks and loads in the chosen dino profile
     def dinosaur_setup(self, dinosaur_number):
         dinosaur_names = ["Raptor", "Trike", "Rex"]
         dinosaur_health = [50, 125, 100]
@@ -15,6 +15,7 @@ class Dinosaur:
         self.health = dinosaur_health[dinosaur_number]
         self.attack_power = dinosaur_attack[dinosaur_number]
 
+# Attack selector
     def attack_selection(self, robot):
         dino_attack = int(input(f'''
         \nWhat attack would you like to use?!
@@ -25,6 +26,7 @@ class Dinosaur:
         \nPlayer: ''')) - 1
         print(f"\nThe {self.name} viciously attacks {robot.name} with a {self.attack_name[dino_attack]}!")
 
+# Handles Damage Calculation and HP Display
     def attack(self, robot):
         self.attack_selection(robot)
         robot.health -= self.attack_power

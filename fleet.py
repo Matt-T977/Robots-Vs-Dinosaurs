@@ -5,7 +5,7 @@ class Fleet:
     def __init__(self):
         self.robots = []
 
-
+# Creates the robot characters and starts the set up.
     def create_fleet(self):
         robot_one = Robot()
         robot_two = Robot()
@@ -13,6 +13,7 @@ class Fleet:
         self.robots = [robot_one, robot_two, robot_three]
         self.fleet_setup()  
 
+# Sets robot names and start the load out custimization for players.
     def fleet_setup(self):
         print('''
         \nThe fleet has arrived Commander! 
